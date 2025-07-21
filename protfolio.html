@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Yadav - Professional Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .portfolio-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #fff;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #fff; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-white font-bold text-xl">Harshit Yadav</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-blue-200 transition-colors">Home</a>
+                    <a href="#about" class="text-white hover:text-blue-200 transition-colors">About</a>
+                    <a href="#services" class="text-white hover:text-blue-200 transition-colors">Services</a>
+                    <a href="#portfolio" class="text-white hover:text-blue-200 transition-colors">Portfolio</a>
+                    <a href="#contact" class="text-white hover:text-blue-200 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white bg-opacity-10 backdrop-blur-lg">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block text-white py-2">Home</a>
+                <a href="#about" class="block text-white py-2">About</a>
+                <a href="#services" class="block text-white py-2">Services</a>
+                <a href="#portfolio" class="block text-white py-2">Portfolio</a>
+                <a href="#contact" class="block text-white py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center animate-fade-in">
+            <!-- Profile Image Above Name -->
+            <div class="w-56 h-56 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <img src="image.jpg" alt="Harshit Yadav" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Harshit Yadav</h1>
+            <p class="text-xl md:text-2xl mb-8 typing-animation" id="typingText">Video Editor & Graphic Designer</p>
+            <div class="space-x-4">
+                <button onclick="scrollToSection('portfolio')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                    View My Work
+                </button>
+                <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all">
+                    Get In Touch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Video Editor & Graphic Designer</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With over 2 years of experience in video editing and graphic design, I specialize in creating compelling visual content that captivates audiences. From corporate videos to stunning graphics, I bring ideas to life using industry-leading tools like Adobe Premiere Pro, After Effects, Photoshop, and Canva.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        I'm passionate about combining video editing expertise with graphic design skills to deliver comprehensive visual solutions. Whether it's motion graphics, video editing, or static designs, I use cutting-edge technology to exceed client expectations and create impactful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/harshityadav09/" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/harshityadaavv/" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">Video Editing</span>
+                            <span class="text-gray-600">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95" style="width:0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">Adobe Premiere Pro</span>
+                            <span class="text-gray-600">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95" style="width:0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">After Effects</span>
+                            <span class="text-gray-600">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90" style="width:0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">Photoshop</span>
+                            <span class="text-gray-600">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92" style="width:0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">Canva</span>
+                            <span class="text-gray-600">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88" style="width:0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-gray-700">Da-vinchi</span>
+                            <span class="text-gray-600">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70" style="width:0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Animate skill bars when About section is in view
+        function animateSkillBarsFill() {
+            const skillBars = document.querySelectorAll('#about .skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.transition = 'width 2s cubic-bezier(.4,0,.2,1)';
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 300);
+            });
+        }
+        // Use Intersection Observer for About section
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutSection = document.getElementById('about');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateSkillBarsFill();
+                            observer.unobserve(aboutSection);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observer.observe(aboutSection);
+            } else {
+                // Fallback for old browsers
+                animateSkillBarsFill();
+            }
+        });
+    </script>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">My Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Video Editing</h3>
+                    <p class="text-gray-600 mb-6">Professional video editing using Adobe Premiere Pro for all types of content including corporate videos and social media.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Corporate Videos</li>
+                        <li>• Social Media Content</li>
+                        <li>• Documentaries</li>
+                        <li>• Long form videos</li>
+                        <li>• Short Videos</li>
+                        <li>• Reel editor</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-purple-600 mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Motion Graphics</h3>
+                    <p class="text-gray-600 mb-6">Eye-catching motion graphics and animations using After Effects that bring your content to life and engage audiences.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Logo Animations</li>
+                        <li>• Title Sequences</li>
+                        <li>• Infographic Videos</li>
+                        <li>• Stingers
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl text-orange-600 mb-4">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Social Media Design</h3>
+                    <p class="text-gray-600 mb-6">Quick and professional social media graphics using Canva for consistent brand presence across platforms.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>• Instagram Posts</li>
+                        <li>• Facebook Graphics</li>
+                        <li>• YouTube Thumbnails</li>
+                        <li>• Story Templates</li>
+                        <li>• Event Poster </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">My Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Portfolio Item 1 -->
+                <div class="portfolio-item bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <a href="https://www.instagram.com/reel/DIj_ersoFEX/?utm_source=ig_web_copy_link&igsh=MTJhcDI0d3B2OXM5aA==" target="_blank">
+                        <img src="1000051044-1024x653.webp" alt="Work 1" class="w-full h-64 object-cover">
+                        <div class="px-4 py-3 bg-white text-gray-800 font-semibold text-center">Drone View Edit</div>
+                    </a>
+                </div>
+                <!-- Example Portfolio Item 2 -->
+                <div class="portfolio-item bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <a href="https://www.instagram.com/reel/DL5r6yxOwl3/?utm_source=ig_web_copy_link&igsh=bXE5ejI3MXk4dGI5" target="_blank">
+                        <img src="thumbbig-1389244.webp" alt="Work 2" class="w-full h-64 object-cover">
+                        <div class="px-4 py-3 bg-white text-gray-800 font-semibold text-center">Gaming Edit</div>
+                    </a>
+                </div>
+                <!-- Example Portfolio Item 3 -->
+                <div class="portfolio-item bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <a href="https://www.instagram.com/reel/DGIOg2ISdaO/?utm_source=ig_web_copy_link&igsh=dTJhMTZub3AwOG05" target="_blank">
+                        <img src="360_F_429132228_nLeGDcW1KKWfWVAS1MdxC89m140tLXPz.jpg" alt="Work 3" class="w-full h-64 object-cover">
+                        <div class="px-4 py-3 bg-white text-gray-800 font-semibold text-center">Cinematic Ediit</div>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 hero-bg text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Let's Work Together</h3>
+                    <p class="mb-8 text-lg opacity-90">Ready to bring your vision to life? I'd love to hear about your project and discuss how we can create something amazing together.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <span>info.harshityadav09@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                            <span>JABALPUR, India</span>
+                            <a href="https://www.google.com/maps?q=Jabalpur,+India" target="_blank" class="ml-2 text-blue-300 hover:text-blue-500 underline text-sm">
+                                View on Map
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-8 rounded-xl">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Your Name">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="your@email.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Project Type</label>
+                            <select required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                <option value="" class="text-gray-800">Select Project Type</option>
+                                <option value="video-editing" class="text-gray-800">Video Editing</option>
+                                <option value="motion-graphics" class="text-gray-800">Motion Graphics</option>
+                                <option value="color-grading" class="text-gray-800">Color Grading</option>
+                                <option value="other" class="text-gray-800">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Harshit Yadav</h3>
+            <p class="text-gray-400 mb-6">Video Editor & Graphic Designer </p>
+            <p class="text-gray-500">&copy; 2024 Harshit Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="portfolioModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-2xl mx-4 max-h-96 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="modalTitle" class="text-2xl font-bold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p id="modalContent" class="text-gray-600 leading-relaxed"></p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Typing animation
+        const texts = ['Video Editor & Graphic Designer', 'Adobe Premiere Pro', 'After Effects ', 'Photoshop & Canva Pro','color Grading'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            const typingElement = document.getElementById('typingText');
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            setTimeout(typeText, isDeleting ? 50 : 100);
+        }
+
+        // Skill bar animation
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        }
+
+        // Modal functions
+        function openModal(title, content) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalContent').textContent = content;
+            document.getElementById('portfolioModal').classList.remove('hidden');
+            document.getElementById('portfolioModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('portfolioModal').classList.add('hidden');
+            document.getElementById('portfolioModal').classList.remove('flex');
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! This is a demo form. In a real website, this would send your message to Harshit.');
+        }
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            typeText();
+            setTimeout(animateSkillBars, 1000);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.portfolio-item, .bg-white');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('portfolioModal').addEventListener('click', (e) => {
+            if (e.target.id === 'portfolioModal') {
+                closeModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962c75d4777a47df',t:'MTc1MzExOTM4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
